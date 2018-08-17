@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Default suite">
+<!-- Default suite -->
+	<parameter name="browser"  value="Chrome"/>
+	<test name="Default test" verbose="2">
+	<classes>
+		<class name="TestSuite.DemoSiteTestCases">
+			<methods>
+			<include name="registerDetails"/>
+			<include name="alerts"/>
+			</methods>
+		</class>
+	</classes>
+	</test>
+	<!-- Default test -->
+</suite>
