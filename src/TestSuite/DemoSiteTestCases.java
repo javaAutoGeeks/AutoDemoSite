@@ -82,7 +82,7 @@ public class DemoSiteTestCases {
 	//	}
 
 	@Test(dataProvider="RegistrationSheet")
-	public void registerDetails(String fname,String lname) throws AWTException {
+	public void registerDetails(String TestCase,String fname,String lname,String Address) throws AWTException {
 
 		//extent.startTest("TestCaseName", "Description")
 		//TestCaseName – Name of the test
