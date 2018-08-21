@@ -63,6 +63,7 @@ public class ExtentReport {
 	 throw new SkipException("Skipping - This is not ready for testing ");
 	 }
 	 
+	 
 	 @AfterMethod
 	 public void getResult(ITestResult result){
 	 if(result.getStatus() == ITestResult.FAILURE){
