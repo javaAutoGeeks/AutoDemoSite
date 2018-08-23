@@ -8,7 +8,7 @@
         <methods>
           <include name="alerts"/>
           <include name="getResult"/>
-          <include name="registerDetails"/>
+          <include name="registerDetails" invocation-numbers="1"/>
           <include name="closeBrowser"/>
           <include name="openBrowser"/>
         </methods>

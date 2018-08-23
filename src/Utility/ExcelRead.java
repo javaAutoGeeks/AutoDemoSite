@@ -52,6 +52,7 @@ public class ExcelRead {
 			System.out.println("Last Row - "+totalRows);
 			System.out.println("Last Col - "+totalCols);
 
+			tabArray=new String[totalRows][totalCols];
 
 			ci=0;
 
