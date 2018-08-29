@@ -42,16 +42,22 @@ public class Registration {
 	
 	
 	
-	
-	
-	public void enterDetails(WebDriver dr,String fname ,String lname) {
+	//Clicks on the skip login
+	public void clickSkipLogin(WebDriver dr) {
 		
 		dr.findElement(btnSkipSignIn).click();
 		
-		dr.findElement(txtFirstName).sendKeys("Rohit");
-		dr.findElement(txtLastName).sendKeys("Ranjan");
+	}
+	
+	
+	
+	public void enterDetails(WebDriver dr,String tc,String fname ,String lname,String address) {
 		
-		dr.findElement(txtAddress).sendKeys("C903 , Silver Skyscapes Wakad , Pune");
+		System.out.println("Test Case - "+tc);
+		dr.findElement(txtFirstName).sendKeys(fname);
+		dr.findElement(txtLastName).sendKeys(lname);
+		
+		dr.findElement(txtAddress).sendKeys(address);
 		dr.findElement(txtEmailAddress).sendKeys("rohitrnjn@gmail.com");
 		dr.findElement(txtPhone).sendKeys("98799989796");
 		dr.findElement(rdoFGender).click();

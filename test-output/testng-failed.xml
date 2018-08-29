@@ -6,7 +6,6 @@
     <classes>
       <class name="TestSuite.DemoSiteTestCases">
         <methods>
-          <include name="alerts"/>
           <include name="getResult"/>
           <include name="registerDetails" invocation-numbers="1"/>
           <include name="closeBrowser"/>

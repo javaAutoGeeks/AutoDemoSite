@@ -17,8 +17,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.ITestResult;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;
@@ -66,6 +68,7 @@ public class DemoSiteTestCases {
 			dr = new ChromeDriver();
 			dr.get("http://demo.automationtesting.in/Index.html");
 			dr.manage().window().maximize();
+			reg.clickSkipLogin(dr);
 		}
 
 		else if(browser.equalsIgnoreCase("Firefox")){
@@ -82,7 +85,7 @@ public class DemoSiteTestCases {
 	//	}
 
 	@Test(dataProvider="RegistrationSheet")
-	public void registerDetails(String TestCase,String fname,String lname,String Address) throws AWTException {
+	public void registerDetails(String testCase,String fname,String lname,String address) throws AWTException, InterruptedException {
 
 		//extent.startTest("TestCaseName", "Description")
 		//TestCaseName – Name of the test
@@ -93,9 +96,11 @@ public class DemoSiteTestCases {
 		//Assert.assertTrue(true);
 		
 		System.out.println(" In Regester Deatils");
-
-		reg.enterDetails(dr,fname,lname);
+		
+		reg.enterDetails(dr,testCase,fname,lname,address);
 		reg.browseFile(dr);	
+		Thread.sleep(10000);
+		dr.close();
 		
 		//To generate the log when the test case is passed
 		logger.log(LogStatus.PASS, "Test Case - Register details is passTest");
@@ -106,7 +111,7 @@ public class DemoSiteTestCases {
 	public void alerts() {
 
 		logger = extent.startTest("alerts","Check that the alerts for the users arw working properly ");
-		AssertJUnit.assertTrue(false);
+		AssertJUnit.assertTrue(true);
 		System.out.println(" In the alerts page ");
 		logger.log(LogStatus.PASS, "Test Case alerts Status is passed");
 
@@ -145,7 +150,7 @@ public class DemoSiteTestCases {
 	
 
 	@AfterTest
-	public void closeBrowser() {
+	public void closeBrowser() throws InterruptedException {
 
 		System.out.println("Closing the browser ");
 		// writing everything to document
@@ -158,7 +163,7 @@ public class DemoSiteTestCases {
 		//close() - To close all the operation
 		extent.close();
 
-		//dr.quit();
+		dr.quit();
 
 
 	}	

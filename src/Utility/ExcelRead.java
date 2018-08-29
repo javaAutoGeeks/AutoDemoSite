@@ -60,14 +60,16 @@ public class ExcelRead {
 
 				cj=0;
 				int totalCols1 = sh.getRow(i).getLastCellNum();
-				System.out.println("Last Col of "+i+" row = "+totalCols1 );
+				//System.out.println("Last Col of "+i+" row = "+totalCols1 );
 				for (int j=startCol;j<=totalCols1-1;j++, cj++){
 
 					tabArray[ci][cj]=getCellData(i,j);
 
-					System.out.println(tabArray[ci][cj]);  
+					System.out.print(tabArray[ci][cj]+" | ");  
 
 				}
+				
+				System.out.println();
 
 			}
 
