@@ -75,14 +75,14 @@ public class Registration {
 		Select sel = new Select(dr.findElement(drpSkills));
 		sel.selectByVisibleText("Java");
 		
-		Select sel1 = new Select(dr.findElement(drpCountry));
-		sel1.selectByVisibleText("India");
+//		Select sel1 = new Select(dr.findElement(drpCountry));
+//		sel1.selectByVisibleText("India");
 		
 		Select sel2 = new Select(dr.findElement(drpSelectCountry));
 		sel2.selectByVisibleText("India");
 		
-		Select sel3 = new Select(dr.findElement(drpCountry));
-		sel3.selectByVisibleText("India");
+//		Select sel3 = new Select(dr.findElement(drpCountry));
+//		sel3.selectByVisibleText("India");
 		
 		Select sel4 = new Select(dr.findElement(drpDOBYear));
 		sel4.selectByVisibleText("1991");
@@ -101,14 +101,14 @@ public class Registration {
 		
 	}
 
-	public void browseFile(WebDriver dr) throws AWTException {
+	public void browseFile(WebDriver dr) throws AWTException, InterruptedException {
 		
 		dr.findElement(btnBrowse).click();
 		
 		String filename = "C:\\Users\\rr72165\\Desktop\\Onboarding Error Screenshots\\New folder (2)\\DOB.PNG";
 		
 		setClipboardData(filename);
-		System.out.println("File name entered ");
+		Thread.sleep(10000);
 		
 		uploadFile(filename);
 			
@@ -133,8 +133,13 @@ public class Registration {
             robot.keyRelease(KeyEvent.VK_CONTROL);
             robot.keyPress(KeyEvent.VK_ENTER);
             robot.keyRelease(KeyEvent.VK_ENTER);
+            System.out.println("File name entered ");
+            
         }catch (Exception exp) {
         	exp.printStackTrace();
+        	
         }
+        
 	}
+	
 }
