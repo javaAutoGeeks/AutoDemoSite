@@ -45,7 +45,6 @@ public class ExcelRead {
 
 			int ci,cj;
 
-			
 			int totalRows = sh.getLastRowNum();
 			int totalCols = sh.getRow(0).getLastCellNum();
 			
