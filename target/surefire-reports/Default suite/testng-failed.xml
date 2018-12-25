@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
-  <test thread-count="5" name="Default test(failed)">
-    <parameter name="browser" value="Competency Assessment,Competency Assessment Test Case"/>
+<suite guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [Default suite]">
+  <parameter name="browser" value="Chrome"/>
+  <test thread-count="5" verbose="0" name="Default test(failed)">
     <classes>
       <class name="TestSuite.DemoSiteTestCases">
         <methods>
-          <include name="alerts"/>
           <include name="getResult"/>
-          <include name="registerDetails" invocation-numbers="0"/>
+          <include name="registerDetails"/>
           <include name="closeBrowser"/>
           <include name="openBrowser"/>
         </methods>

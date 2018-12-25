@@ -2,9 +2,8 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Default suite">
 <!-- Default suite -->
+	<parameter name="browser"  value="Chrome"/>
 	<test name="Default test" verbose="2">
-	<!-- parameter name="browser"  value="Chrome"/ -->
-	<parameter name="browser" value="Competency Assessment,Competency Assessment Test Case" />
 	<classes>
 		<class name="TestSuite.DemoSiteTestCases">
 			<methods>
