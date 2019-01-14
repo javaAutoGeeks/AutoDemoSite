@@ -8,6 +8,7 @@ import java.awt.event.KeyEvent;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.asserts.SoftAssert;
 
 public class Registration {
 	
@@ -40,7 +41,7 @@ public class Registration {
 	By txtPassword = By.xpath(".//*[@id='firstpassword']");
 	By txtConfirmPwd = By.xpath(".//*[@id='secondpassword']");
 	
-	
+	SoftAssert Assert = new SoftAssert();
 	
 	//Clicks on the skip login
 	public void clickSkipLogin(WebDriver dr) {
@@ -64,6 +65,7 @@ public class Registration {
 		dr.findElement(chkCricketHobbies).click();
 		dr.findElement(chkMoviesHobbies).click();
 		
+		Assert.assertTrue(dr.findElement(drpSkills).isDisplayed(), "Skills drop down is being displayed");
 		
 		//dr.findElement(drpLanguages).click();
 		
