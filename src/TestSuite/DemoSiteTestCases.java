@@ -31,6 +31,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
@@ -52,7 +53,7 @@ public class DemoSiteTestCases {
 
 	@Parameters({"browser"})
 	@BeforeMethod
-	public void openBrowser(String browser) {
+	public void openBrowser(@Optional("chrome")String browser) {
 
 		//ExtentReports(String filePath,Boolean replaceExisting) 
 		//filepath - path of the file, in .htm or .html format - path where your report needs to generate. 
