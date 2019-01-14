@@ -66,13 +66,7 @@ public class Registration {
 		dr.findElement(chkMoviesHobbies).click();
 		
 		Assert.assertTrue(dr.findElement(drpSkills).isDisplayed(), "Skills drop down is being displayed");
-		
-		//dr.findElement(drpLanguages).click();
-		
-//		Actions action = new Actions()
-//				action.moveToElement(target)
-	
-		
+
 		
 		Select sel = new Select(dr.findElement(drpSkills));
 		sel.selectByVisibleText("Java");
